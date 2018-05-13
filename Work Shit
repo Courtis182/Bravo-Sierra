@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>"Hourly Calculator"</title>
+	</head>
+	<body>
+		<script>
+		var wage = prompt("Whats your hourly wage?") ;
+		var hours1 = prompt("How many hours do you work week one?") ; 
+		var hours2 = prompt("How many hours did you work week two?") ;
+		var hours = Number(hours1) + Number(hours2) ;
+		if (Number(hours) < 80) {
+			var noOvertime = Number(hours) * 2 ;
+			var noOvertimeGross = Number(noOvertime) * Number(wage) ;
+			var noOvertimePay = Number(noOvertimeGross) - (Number(noOvertimeGross) * .15) ;
+			alert (noOvertimePay) ;
+		} else {
+			var basePay = 80 * Number(wage) ;
+			var overPay = (Number(hours) - 80) * (Number(wage) * 1.5) ;
+			var totalGross = Number(basePay) + Number(overPay) ;
+			var totalPay = Number(totalGross) - (Number(totalGross) * .1) ;
+			alert (totalPay) ;
+		}
+		if (Number(hours) < 80) {
+			var noOvertimeSalary = (Number(noOvertimePay) * 26.07) - 932.5 ;
+			alert (noOvertimeSalary) ;
+		} else {
+			var totalSalary = (Number(totalPay) * 26.07) - 932.5 ;
+			alert (totalSalary)
+		}
+		var delayMillis = 2500;
+ 		 	setTimeout(function() {
+ 		 	window.location.reload();
+ 		 }, delayMillis) ;
+		</script>
+	</body> 
+</html> 
